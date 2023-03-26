@@ -122,7 +122,8 @@ func UploadUserPFP(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 }
 
 func UploadUserAudio(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Audio File Upload Endpoint Hit")
+
+	fmt.Println("File Upload Endpoint Hit")
 
 	// mux.Vars(r) is used to extract the variables from the incoming
 	// request's URL. The variables are returned as a map where the keys
@@ -202,5 +203,5 @@ func UploadUserAudio(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	// return that we have successfully uploaded our file!
 	fmt.Fprintf(w, "Successfully Uploaded File\n")
 
-	respondJSON(w, http.StatusCreated, "Uploaded Audio")
+	respondJSON(w, http.StatusOK, "Uploaded Audio")
 }

@@ -63,7 +63,7 @@ func (a *App) setRouters() {
 	//File upload routes
 	a.Post("/upload", a.UploadFile)
 	a.Post("/api/upload/profilepicture/{username}", a.UploadUserPFP)
-	a.Post("/api/upload/audio-file/{username}/{number}", a.UploadUserAudio)
+	a.Post("/api/upload/audio-file", a.UploadUserAudio)
 }
 
 // Router wrapper functions
