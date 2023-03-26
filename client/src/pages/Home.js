@@ -25,9 +25,15 @@ const Home = () => {
     fetch(url, options)
       .then((response) => {
         // Handle the response from the server
+        if (response.ok) {
+          console.log("AUDIO SENT");
+        }
       })
       .catch((error) => {
         // Handle any errors that occur during the request
+        if (error) {
+          console.log("ERRRRRRORRRRRR");
+        }
       });
   };
   return (
