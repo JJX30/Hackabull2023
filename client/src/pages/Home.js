@@ -2,45 +2,51 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { ReactMediaRecorder } from "react-media-recorder";
 import { BiMicrophone, BiMicrophoneOff } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [recording, setRecording] = useState(false);
-
+  const navigate = useNavigate();
   const handleSubmit = async (media) => {
-    let blob = await fetch(media).then((r) => r.blob());
-    console.log(blob);
-    const formData = new FormData();
-    formData.append("file", blob, blob.name);
-    const url = "";
-    const options = {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        Accept: "audio/wav",
-        "Content-Type": "audio/wav",
-      },
-      body: formData,
-    };
+    setTimeout(function () {
+      navigate("/Rizzpository", { replace: true });
+    }, 5000);
 
-    fetch(url, options)
-      .then((response) => {
-        // Handle the response from the server
-        if (response.ok) {
-          console.log("AUDIO SENT");
-        }
-      })
-      .catch((error) => {
-        // Handle any errors that occur during the request
-        if (error) {
-          console.log("ERRRRRRORRRRRR");
-        }
-      });
+    // console.log(blob);
+    // const formData = new FormData();
+    // formData.append("file", blob, blob.name);
+    // const url = "";
+    // const options = {
+    //   method: "POST",
+    //   mode: "cors",
+    //   headers: {
+    //     Accept: "audio/wav",
+    //     "Content-Type": "audio/wav",
+    //   },
+    //   body: formData,
+    // };
+
+    // fetch(url, options)
+    //   .then((response) => {
+    //     // Handle the response from the server
+    //     if (response.ok) {
+    //       console.log("AUDIO SENT");
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     // Handle any errors that occur during the request
+    //     if (error) {
+    //       console.log("ERRRRRRORRRRRR");
+    //     }
+    //   });
   };
   return (
     <Wrapper>
       <div className="main">
-        <h1 className="title">Rizzerator</h1>
-
+        <div>
+          <h1 className="title">Rizz it up</h1>
+          <p className="footer-logo-content">and get a rizz-report</p>
+        </div>
         <ReactMediaRecorder
           audio
           render={({
@@ -113,7 +119,13 @@ const Wrapper = styled.div`
   }
   .button {
     width: 100px;
-    height: 50px;
+    height: 100px;
+    background: none;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  .button:hover {
+    background-color: #dedede;
   }
   .mediablob {
     margin: 20px;
@@ -122,5 +134,20 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-evenly;
     width: 50%;
+  }
+  .title {
+    font-size: 60px;
+    font-family: Roboto, sans-serif;
+    margin-bottom: 0px;
+  }
+
+  .footer-logo-content {
+    font-family: Roboto, sans-serif;
+
+    font-size: 25px;
+    margin: 0;
+    font-weight: 300;
+    opacity: 70%;
+    margin-bottom: 30px;
   }
 `;

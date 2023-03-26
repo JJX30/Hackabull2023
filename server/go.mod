@@ -10,5 +10,5 @@ require (
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/mattn/go-sqlite3 v1.14.15 // indirect
 	golang.org/x/crypto v0.7.0
-	gorm.io/gorm v1.24.6 // indirect
+	gorm.io/gorm v1.24.6
 )

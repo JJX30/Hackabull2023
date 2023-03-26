@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -21,15 +20,12 @@ const Footer = () => {
                   React
                 </a>
                 <br></br>
-                <a href="https://expressjs.com/" className="footer-built-link">
-                  Express
+                <a href="https://go.dev/" className="footer-built-link">
+                  Golang
                 </a>
                 <br></br>
-                <a
-                  href="https://www.mongodb.com/"
-                  className="footer-built-link"
-                >
-                  MongoDB
+                <a href="https://pytorch.org/" className="footer-built-link">
+                  Pytorch
                 </a>
               </p>
             </div>
@@ -38,14 +34,19 @@ const Footer = () => {
             <div className="footer-about">
               <p className="footer-about-heading">about us</p>
               <p className="footer-about-content">
-                RIZZERATOR RIZZERATOR RIZZERATOR RIZZERATOR RIZZERATOR
-                RIZZERATOR RIZZERATOR RIZZERATOR RIZZERATOR RIZZERATOR
+                The Rizzerator is a machine learning classification model
+                designed to help improve your speech. Trained on hundreds of
+                thousands of speeches it has found nuances in word choice,
+                candence, and emotions to accurately rate the confidence (rizz)
+                of an audio file. The Rizzerator will take you beyond your
+                potential, allowing you to analyze and improve your speech has
+                never been easier - with rizzz.
               </p>
             </div>
           </div>
         </footer>
         <div className="footer-copyright">
-          <p>@ 2021 UltimateAPI ® All rights reserved</p>
+          <p>@ 2023 Rizzerator ® All rights reserved</p>
         </div>
       </div>
     </Wrapper>
