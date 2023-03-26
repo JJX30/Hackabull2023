@@ -23,7 +23,7 @@ type App struct {
 // Opens database and router
 func (a *App) Initialize() {
 
-	db, err := gorm.Open(sqlite.Open("linguistic-text.db"), &gorm.Config{})
+	db, err := gorm.Open(sqlite.Open("User.db"), &gorm.Config{})
 	if err != nil {
 		log.Panic("Could not connect to database")
 	}
