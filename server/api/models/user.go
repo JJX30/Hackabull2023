@@ -16,12 +16,14 @@ type User struct {
 	// CreatedAt, UpdatedAt, and DeletedAt are added to the User struct
 	// automatically.
 	gorm.Model
-	Username           string `json:"username"`
-	Passwordhash       string `json:"passwordhash"`
-	Firstname          string `json:"firstname"`
-	Lastname           string `json:"lastname"`
-	Email              string `json:"email"`
-	ProfilePicturePath string `json:"profilepicturepath"`
+	Username           string   `json:"username"`
+	Passwordhash       string   `json:"passwordhash"`
+	Firstname          string   `json:"firstname"`
+	Lastname           string   `json:"lastname"`
+	Email              string   `json:"email"`
+	ProfilePicturePath string   `json:"profilepicturepath"`
+	Text               []string `json:"text"`
+	ConfidenceLevel    []int    `json:"confidencelevel"`
 }
 
 // Struct that defines the fields that represent a user in the application
