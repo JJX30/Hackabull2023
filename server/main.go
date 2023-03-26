@@ -13,5 +13,5 @@ func main() {
 	app.Initialize()
 
 	// Starts the HTTP server and listens for incoming requests on port 3000
-	app.Run(":3000")
+	app.Run(":4000")
 }
