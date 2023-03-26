@@ -29,19 +29,6 @@ const Home = () => {
       .catch((error) => {
         // Handle any errors that occur during the request
       });
-
-    // try {
-    //   const response = await fetch(url, options);
-    //   const result = await response.json();
-    //   if (result.error) {
-    //     // errorMessage.current.innerHTML = "Try signing in again!";
-    //     // errorMessage.current.hidden = false;
-    //   } else {
-    //     // history.push("/doc");
-    //   }
-    // } catch (err) {
-    //   console.log(err);
-    // }
   };
   return (
     <Wrapper>
