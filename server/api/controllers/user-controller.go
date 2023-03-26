@@ -40,19 +40,6 @@ func LogIn(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	// Makes sure that the request body is closed before the function exits.
 	defer r.Body.Close()
 
-	// Hashes the user's password
-	// h, err := HashPassword(user.Passwordhash)
-	// if err != nil {
-	// 	respondError(w, http.StatusBadRequest, err.Error())
-	// 	return
-	// }
-
-	// user.Passwordhash = h
-
-	//h := sha256.New()
-	//h.Write([]byte(user.Passwordhash))
-	//user.Passwordhash = string(h.Sum(nil))
-
 	var checkUser models.User
 	db.Where("username = ?", user.Username).First(&checkUser)
 
@@ -61,7 +48,7 @@ func LogIn(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	respondJSON(w, http.StatusCreated, user)
+	respondJSON(w, http.StatusCreated, "Successful Login")
 }
 func RegisterUser(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 
@@ -92,9 +79,6 @@ func RegisterUser(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	}
 
 	user.Passwordhash = h
-	// h := sha256.New()
-	// h.Write([]byte(user.Passwordhash))
-	// user.Passwordhash = string(h.Sum(nil))
 
 	username := user.Username
 	var checkUsername models.User
@@ -110,7 +94,7 @@ func RegisterUser(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 		respondError(w, http.StatusInternalServerError, err.Error())
 		return
 	}
-	respondJSON(w, http.StatusCreated, user)
+	respondJSON(w, http.StatusCreated, "Successful Registration")
 }
 
 func GetAllUsers(db *gorm.DB, w http.ResponseWriter, r *http.Request) {

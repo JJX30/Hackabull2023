@@ -1,4 +1,4 @@
-module github.com/JJX30/Rizzerator-App
+module github.com/JJX30/Rizzerator-App/server
 
 go 1.20
 

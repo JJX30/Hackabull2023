@@ -23,7 +23,7 @@ type App struct {
 // Opens database and router
 func (a *App) Initialize() {
 
-	db, err := gorm.Open(sqlite.Open("campusDB.db"), &gorm.Config{})
+	db, err := gorm.Open(sqlite.Open("linguistic-text.db"), &gorm.Config{})
 	if err != nil {
 		log.Panic("Could not connect to database")
 	}
@@ -60,6 +60,7 @@ func (a *App) setRouters() {
 	//File upload routes
 	a.Post("/upload", a.UploadFile)
 	a.Post("/api/upload/profilepicture/{username}", a.UploadUserPFP)
+	a.Post("/api/upload/audio-file/{username}", a.UploadUserAudio)
 }
 
 // Router wrapper functions
@@ -144,6 +145,10 @@ func (a *App) UploadFile(w http.ResponseWriter, r *http.Request) {
 
 func (a *App) UploadUserPFP(w http.ResponseWriter, r *http.Request) {
 	controllers.UploadUserPFP(a.DB, w, r)
+}
+
+func (a *App) UploadUserAudio(w http.ResponseWriter, r *http.Request) {
+	controllers.UploadUserAudio(a.DB, w, r)
 }
 
 // Run http server
