@@ -45,10 +45,11 @@
 
 The Rizzerator is a machine learning classification model designed to help improve your speech. Using advanced machine learning techniques it provides a confidence score to the inputed audio file, that being how much rizz was detected. The model was trained on hundreds of thousands of speeches and has found nuances in word choice, candence, and emotions to accurately rate the confidence (rizz) of an audio file. The Rizzerator will take you beyond your potential, allowing you to analyze and improve your speech has never been easier - with rizzz.
 
-Data sets used:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+About our model:
+* Bank customer service caller audio and agent audio, along with transcipt, used to train model
+* We used Whisper (OpenAI Library) to transcribe the audio to text
+* Linguistic feature extractors used: Word2Vec, Glove, BERT
+* Acoustic feature extractors used: pitch, zero-crossing rate, energy, centroid, spectral spread, spectral entropy
 
 All data used is public access.
 
