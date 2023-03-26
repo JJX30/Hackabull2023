@@ -57,10 +57,10 @@ All data used is public access.
 
 
 ### Built With
-* [![React][React.js]][https://react.dev/]
-* [![Pytorch][Python]][https://pytorch.org/]
-* [![Go][Golang]][https://go.dev/]
-* [![Python][Python3.0]][https://www.python.org/]
+* [React](https://react.dev/)
+* [Pytorch](https://pytorch.org/)
+* [Golang](https://go.dev/)
+* [Python](https://www.python.org/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -111,10 +111,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Our team
 
-Mauricio Del Castillo - [@your_twitter](https://twitter.com/your_username) - email@example.com
-Hadi Baajour - []() - 
-Skyler Estavillo - []()-
-Tai Tran []()-
+Mauricio Del Castillo - mauriciodelcas30@gmail.com [github](https://github.com/JJX30)
+Hadi Baajour - hadimbaajour@gmail.com [github](https://github.com/hadiplays)
+Skyler Estavillo - cryus.estavillo@gmail.com [github](https://github.com/cyrus-estavillo)
+Tai Tran - ttai8501@gmail.com [github](https://github.com/taiphlosion)
 
 Project Link: [https://github.com/JJX30/Rizzerator-App](https://github.com/JJX30/Rizzerator-App)
 
