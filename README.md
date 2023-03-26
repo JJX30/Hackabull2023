@@ -41,7 +41,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Screenshot of Rizzerator landing](./images/ss1.png)
+![Screenshot of Rizzerator landing](ss1.png)
 
 The Rizzerator is a machine learning classification model designed to help improve your speech. Using advanced machine learning techniques it provides a confidence score to the inputed audio file, that being how much rizz was detected. The model was trained on hundreds of thousands of speeches and has found nuances in word choice, candence, and emotions to accurately rate the confidence (rizz) of an audio file. The Rizzerator will take you beyond your potential, allowing you to analyze and improve your speech has never been easier - with rizzz.
 
