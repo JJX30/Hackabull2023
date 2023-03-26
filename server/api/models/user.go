@@ -24,6 +24,7 @@ type User struct {
 	ProfilePicturePath string   `json:"profilepicturepath"`
 	Text               []string `json:"text"`
 	ConfidenceLevel    []int    `json:"confidencelevel"`
+	AudioPath          string   `json:"audiopath"`
 }
 
 // Struct that defines the fields that represent a user in the application

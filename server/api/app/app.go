@@ -49,6 +49,9 @@ func (a *App) setRouters() {
 	//User Profile Picture
 	a.Get("/api/users/profilepicture/{username}", a.GetUserProfilePicture)
 
+	//User Audio
+	a.Get("/api/users/audio-file/{username}/{number}", a.GetUserAudio)
+
 	//Event routes
 	a.Post("/api/events", a.CreateEvent)
 	a.Get("/api/events", a.GetAllEvents)
@@ -60,7 +63,7 @@ func (a *App) setRouters() {
 	//File upload routes
 	a.Post("/upload", a.UploadFile)
 	a.Post("/api/upload/profilepicture/{username}", a.UploadUserPFP)
-	a.Post("/api/upload/audio-file/{username}", a.UploadUserAudio)
+	a.Post("/api/upload/audio-file/{username}/{number}", a.UploadUserAudio)
 }
 
 // Router wrapper functions
@@ -111,6 +114,10 @@ func (a *App) LogIn(w http.ResponseWriter, r *http.Request) {
 
 func (a *App) GetUserProfilePicture(w http.ResponseWriter, r *http.Request) {
 	controllers.GetUserProfilePicture(a.DB, w, r)
+}
+
+func (a *App) GetUserAudio(w http.ResponseWriter, r *http.Request) {
+	controllers.GetUserAudio(a.DB, w, r)
 }
 
 // Handlers to manage event data
