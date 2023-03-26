@@ -176,15 +176,28 @@ func UploadUserAudio(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Add pfp path to models.User{} for that username
-	// frontendPath := path + handler.Filename
+	// Create a new file with a specific name and path
+	g, err := os.Create("./uploaded-file/" + handler.Filename)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer f.Close()
 
-	// user.ProfilePicturePath = frontendPath
+	// Copy the uploaded file data to the new file
+	_, err = io.Copy(g, file)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
-	// if err := db.Save(&user).Error; err != nil {
-	// 	respondError(w, http.StatusInternalServerError, err.Error())
-	// 	return
-	// }
+	// Run the Python ML model
+	RunPython()
+
+	e := os.Remove("./uploaded-file/" + handler.Filename)
+	if e != nil {
+		log.Fatal(e)
+	}
 
 	// return that we have successfully uploaded our file!
 	fmt.Fprintf(w, "Successfully Uploaded File\n")

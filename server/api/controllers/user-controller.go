@@ -13,6 +13,23 @@ import (
 	"gorm.io/gorm"
 )
 
+func GetUserAudio(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+
+	// vars["username"] is used to extract the value of this variable.
+	username := vars["username"]
+	user := findUser(db, username, w, r)
+	if user == nil {
+		return
+	}
+
+	number := vars["number"]
+
+	path := user.ProfilePicturePath + number
+
+	respondJSON(w, http.StatusOK, path)
+}
+
 func GetUserProfilePicture(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 
